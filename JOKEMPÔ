@@ -1,0 +1,54 @@
+import emoji
+from random import randint
+from time import sleep
+
+print('-=-'*10)
+print(emoji.emojize(':secret:',use_aliases=True),'       JOKEMPÔ         '
+      ,emoji.emojize(':ideograph_advantage:',use_aliases=True))
+print('-=-'*10)
+
+itens = emoji.emojize(':facepunch:',use_aliases=True),emoji.emojize(':page_facing_up:'),emoji.emojize(':scissors:')
+pc = randint(0,2)
+print('Jogador',emoji.emojize(':man:',use_aliases=True),emoji.emojize(':vs:',use_aliases=True),
+      emoji.emojize(':computer:',use_aliases=True))
+print('Suas opções:')
+print('[ 0 ] PEDRA',emoji.emojize(':facepunch:',use_aliases=True))
+print('[ 1 ] PAPEL',emoji.emojize(':page_facing_up:'))
+print('[ 2 ] TESOURA',emoji.emojize(':scissors:'))
+opcao = False
+while opcao == False:
+    jogador = input('Qual é a sua jogada?')
+    try:
+        jogador = int(jogador)
+        if jogador <0 or jogador >2:
+            print('Jogada invalida. Digite: [ 0 ] PEDRA, [ 1 ] PAPEL ou [ 2 ] TESOURA')
+        else:
+            opcao = True
+    except:
+        print('Formato invalido! Digite: [ 0 ] PEDRA, [ 1 ] PAPEL ou [ 2 ] TESOURA')
+
+
+print('JO',emoji.emojize(':u5408:',use_aliases=True))
+sleep(0.5)
+print('KEM',emoji.emojize(':u6e80:',use_aliases=True))
+sleep(0.5)
+print('PÔ!!!',emoji.emojize(':u7a7a:',use_aliases=True))
+sleep(0.5)
+print('-=-'*10)
+print(f'O computador jogou {itens[pc]}')
+print(f'Jogador jogou {itens[jogador]}')
+print('-=-'*10)
+if jogador == pc:
+    print('EMPATE',emoji.emojize(':anger:',use_aliases=True))
+elif jogador == 0 and pc == 1:
+    print('COMPUTADOR VENCE!!!',emoji.emojize(':computer:',use_aliases=True))
+elif jogador == 0 and pc == 2:
+    print('JOGADOR VENCE!!!',emoji.emojize(':sunglasses:',use_aliases=True))
+elif jogador == 1 and pc == 0:
+    print('JOGADOR VENCE',emoji.emojize(':sunglasses:',use_aliases=True))
+elif jogador == 1 and pc == 2:
+    print('COMPUTADOR VENCE!!!',emoji.emojize(':computer:',use_aliases=True))
+elif jogador == 2 and pc == 0:
+    print('COMPUTADOR VENCE!!!',emoji.emojize(':computer:',use_aliases=True))
+elif jogador == 2 and pc == 1:
+    print('JOGADOR VENCE!',emoji.emojize(':sunglasses:',use_aliases=True))
